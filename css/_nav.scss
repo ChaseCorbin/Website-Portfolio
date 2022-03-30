@@ -1,0 +1,126 @@
+@import "./variables";
+
+body {
+    overflow-x: hidden;
+}
+
+// animations
+.nav.open .nav-bars {
+    transform: translateX(30px);
+    background: transparent;
+    border: 0;
+    transition: all .3s ease;
+}
+.nav.open .nav-bars::before {
+    transform:  translate(-50px, 0) rotate(45deg);
+}
+.nav.open .nav-bars::after {
+    transform: translate(-50px, 0) rotate(-45deg);
+
+}
+
+@media only screen and (max-width: 1024px) {
+    .nav {
+        position: fixed;
+        right: 1em;
+        bottom: 1em;
+        margin-bottom: 1em;
+        // border: 2px solid rgb(255, 255, 255);
+        width: 2em;
+        height: 4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        .nav-bars {
+            border-radius: 10px;
+            border: 1px solid $bg-clr-1;
+            width: 45px;
+            height: 7px;
+            background-color: $bg-clr-2;
+            transition: all .5s ease-in-out;
+            // top and bottom lines in hamburger menu
+            &::before, &::after {
+                content: '';
+                transition: all .5s ease-in-out;
+                border: 1px solid $bg-clr-1;
+                position: absolute;
+                border-radius: 10px;
+                width: 30px;
+                height: 5px;
+                background-color: $bg-clr-2;
+            }
+            &::before {
+                transform: translate(-1px, -16px);
+            }
+            &::after {
+                transform: translate(-1px, 14px);
+            }
+        }
+    }
+
+
+    .nav ul {
+        list-style-type: none;
+        a {
+            text-decoration: none;
+            li {
+                display: none;
+            }
+        }
+    }
+
+
+    // opens text links when menu .open applies 
+    .nav.open ul a li {
+        display: block;
+        position: absolute;
+        left: -200px;
+        bottom: 400px;
+        color: $bg-clr-2;
+        font-family: Arial, Helvetica, sans-serif;
+        text-shadow: 0 0 2px black;
+        font-size: 2rem;
+    }
+
+
+    .nav.open ul a:nth-child(2) li {
+        bottom: 300px;
+    }
+
+
+    .nav.open ul a:nth-child(3) li {
+        bottom: 200px;
+    }
+
+
+    .nav.open ul a:nth-child(4) li {
+        bottom: 100px;
+    }
+    // screen filter
+    @keyframes screenFilter {
+        0% {
+            background-color: rgba(0, 0, 0, 0);
+        }
+        100% {
+            background-color: rgba(0, 0, 0, .8);
+        }
+    } 
+    .filterScreen {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        background: transparent;
+        display: none;
+        left: -1em;
+    }
+    .filterOn {
+        animation: screenFilter .4s linear forwards;
+        display: block;
+    }
+
+    // adjustment for my work to fit properly
+    #myWork {
+        height: 190vh;
+    }
+}
