@@ -41,6 +41,39 @@
                     top: 0;
                     bottom: 0;
                     width: 100%;
+                    // header and description need a background to make text more readable. thats what this is for.
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 0;
+                        background-image: radial-gradient(ellipse at 10% 20%, #16613eb0, #14291f);
+                        
+                    }
+                    &:hover::before {
+                        height: 200px;
+                        bottom: 0;
+                        padding: 1em;
+                        border-top: 1px solid white;
+                    }
+                    // make a header and description appear with hovering
+                    &:hover h1, &:hover p {
+                        top: 80%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                    &:hover p {
+                        top: 85%;
+                    }
+                    &:hover .carousel-image {
+                        cursor: pointer;
+                    }
+                    h1, p {
+                        color: white;
+                        position: absolute;
+                        font-family: Arial, Helvetica, sans-serif;
+                        
+                    }
                    .carousel-image {
                     border-radius: 10px;
                         width: 100%;
@@ -48,6 +81,7 @@
                         object-fit: cover;
                     } 
                 }
+                
             }
         }
 

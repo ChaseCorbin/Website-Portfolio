@@ -503,13 +503,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  min-height: 300px;
   line-height: 2em;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  -webkit-box-pack: baseline;
-      -ms-flex-pack: baseline;
-          justify-content: baseline;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
   font-family: 'Montserrat', sans-serif;
   padding: 4em 0;
   -webkit-transform: skewY(4deg);
@@ -521,10 +518,16 @@ body {
   font-size: 3rem;
   line-height: 1.4em;
   color: #14291f;
+  font-weight: 600;
+}
+
+.home-container-2 .home-content-container-2 .h1-about-me--me {
+  font-size: 3rem;
+  font-weight: 400;
 }
 
 .home-container-2 .home-content-container-2 p {
-  margin: 1em 2em 0 0;
+  padding: 1em 1em 1em 0;
   line-height: 1.5em;
   width: auto;
   display: block;
@@ -532,6 +535,15 @@ body {
   max-width: 500px;
   font-weight: 500;
   color: #14291f;
+}
+
+.home-container-2 .home-content-container-2 hr {
+  width: 20%;
+  margin: 2em 2em 2em 0;
+  border: none;
+  border-radius: 10px;
+  height: 3px;
+  background-color: #14291f;
 }
 
 #myWork {

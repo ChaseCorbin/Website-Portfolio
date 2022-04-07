@@ -163,20 +163,26 @@ body {
         margin: 0 0 0 2em;
         display: flex;
         flex-direction: column;
+        min-height: 300px;
         line-height: 2em;
-        align-items: baseline;
-        justify-content: baseline;
+        align-content: flex-start;
         font-family: 'Montserrat', sans-serif;
         padding: 4em 0;
         transform: skewY(4deg);
         z-index: 2;
-        #h1-about-me {
+        #h1-about-me {           
             font-size: 3rem;
             line-height: 1.4em;
-            color: $font-clr-1;
+            color: $font-clr-1; 
+            font-weight: 600;             
         }
+        .h1-about-me--me {
+            font-size: 3rem;
+            font-weight: 400;
+        }  
         p{
-            margin: 1em 2em 0 0;
+            padding: 1em 1em 1em 0;
+        
             line-height: 1.5em;
             width: auto;
             display: block;
@@ -184,6 +190,14 @@ body {
             max-width: 500px;
             font-weight: 500;
             color: $font-clr-1;
+        }
+        hr {
+            width: 20%;
+            margin: 2em 2em 2em 0;
+            border: none;
+            border-radius: 10px;
+            height: 3px;
+            background-color: $bg-clr-1;
         }
         
     }
