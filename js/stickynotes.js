@@ -1,18 +1,31 @@
-(function () {
-    const newNote = document.querySelector('#plus');
-    const note = document.createElement('textarea');
-    const deleteBtn = document.createElement('button')
-    
+const newNote = document.querySelector('#plus');
+const note = document.getElementsByTagName('textarea');
+const deleteBtn = document.getElementById('minus');
+const divNote = document.getElementById('addNote');
 
-    newNote.addEventListener('click', function() {
-        note.innerHTML = "Add notes for fun!!";
-        deleteBtn.innerHTML = "-";
-        console.log('clicked');
-        newNote.before(note);
-        newNote.after(deleteBtn);
+function stickyNotesFunction() {
+    let h = window.innerHeight;
+    let w = window.innerWidth;
+    let noteCount = document.getElementById('addNote').children.length;
+    // if the screen is smaller then 1260 only 5 notes may be created
+    if (w < 1260) {
+        if (noteCount >= 5) {
+            return;
+        }
+    } else {  // if the screen is bigger then 1260 only 8 notes may be created
+        if (noteCount >= 8) {
+            return;
+        }
+    }
+    const addNote = document.createElement("textarea");
+    // console.log('add note clicked');
+
+    divNote.appendChild(addNote);
+    deleteBtn.addEventListener('click', function(e) {
+        // console.log('delete note clicked');
+        document.location.reload();
     });
-    deleteBtn.addEventListener('click', function(){
-        note.remove(note);
-        deleteBtn.remove(deleteBtn);
-    });
-})();
+
+    // console.log(noteCount);
+    // console.log(h, w);
+}

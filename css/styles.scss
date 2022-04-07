@@ -6,22 +6,30 @@
 }
 
 
+
 @import "./nav";
 @import "./variables";
 @import "./stickynotes";
 
-.home-container {
+
+
+
+body {
     background-color: $bg-clr-1;
+}
+.home-container { 
     display: flex;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     flex-direction: column;
     justify-content: center;
     width:auto;
+    background-color: $bg-clr-1;
+
     }
     
 
 .home-content-container {
-
     margin: 0 4em;
     display: flex;
     flex-direction: column;
@@ -71,18 +79,19 @@
             line-height: 1.5em;
             margin: 1.5em 0 0 0;
             min-width: 200px;
-            max-width: 500px;
+            max-width: 900px;
             text-align: end;
             display: block;
+            font-size: 1rem;
         }
     }
 }
 
 
-// buttons
-.a-cv {
+// buttons\
+.a-about-me {
     margin: 4em 0 0 0;
-    background-color: $bg-clr-4;
+    background-image: radial-gradient(ellipse at 10% 20%, #16613e, $bg-clr-1);
     text-align: center;
     line-height: 2em;
     text-decoration: none;
@@ -93,22 +102,62 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    border: 2px solid $bg-clr-2;
+    
+    &:hover, &:focus {
+        
+        background-image: radial-gradient(ellipse at 10% 20%, #16613e, #14291fbd);
+    }
+    .h1-about-me {
+        font-size: 1.5em;
+        margin: 0;
+    }
+}
+.a-cv {
+    margin: 4em 0 0 0;
+    background-image: radial-gradient(ellipse at 10% 20%, $bg-clr-2, #bdb987);
+    text-align: center;
+    line-height: 2em;
+    text-decoration: none;
+    color: $font-clr-1;
+    height: 6em;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    &:hover, &:focus {
+        background-image: radial-gradient(ellipse at 10% 20%, $bg-clr-2, #bdb98785);
+    }
 
     .h1-cv {
         font-size: 1.5em;
         margin: 0;
     }
+
 }
 
 
 
 .home-container-2 {
-    background-color: $bg-clr-2;
+    background-image: -webkit-radial-gradient(top left, ellipse, #FDE152 0%, transparent), linear-gradient(to bottom, #FA715F, #FA715F 60%, #DB1174, #9B4CA7); 
     display: flex;
     height: auto;
+    min-height: 500px;
     flex-direction: column;
-    overflow: hidden;
+    transform: skewY(-4deg);
+    z-index: 2;
+    &::before {
+        content: '';
+        width: 100vw;
+        min-height: 100%;
+        background-image: radial-gradient(closest-corner at 35% 45%, $bg-clr-2, #bdb987);
+        position: absolute;
+        z-index: 2;
+        transform: skewY(6deg); 
+        top: 0;
+        left: 0;
+        right: 0;
+    }
     .home-content-container-2 {
         width: auto;
         margin: 0 0 0 2em;
@@ -119,9 +168,9 @@
         justify-content: baseline;
         font-family: 'Montserrat', sans-serif;
         padding: 4em 0;
-        
+        transform: skewY(4deg);
+        z-index: 2;
         #h1-about-me {
-            
             font-size: 3rem;
             line-height: 1.4em;
             color: $font-clr-1;
@@ -136,6 +185,7 @@
             font-weight: 500;
             color: $font-clr-1;
         }
+        
     }
 }
 

@@ -1,0 +1,172 @@
+
+
+@import "./variables";
+
+#home {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+    .nav-and-sticky-notes {
+        margin: 0 0 0 auto;
+        // alignment for the nav without the name container the spacing needs to be set up, 350px is the width of the text and the 16px is a margin.
+        width: calc(100% - 350.67px - 16px);
+    }
+    .carousel-container {
+        width: 100%;
+        max-width: 800px;
+        margin: auto;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .hideBtn {
+            display: none;
+        }
+        .carousel-track-container {
+            box-shadow: 12px 12px 20px 0px rgba(13, 32, 25, 0.966),
+            -20px 16px 20px 0px rgba(12, 12, 12, 0.966);
+            border-radius: 10px;
+            width: 100%;
+            // background-color: white;
+            position: relative;
+            overflow: hidden;
+            
+            
+            .carousel-track {
+                list-style-type: none;
+                position: relative;
+                height: 100%;
+                .carousel-slide {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    width: 100%;
+                   .carousel-image {
+                    border-radius: 10px;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    } 
+                }
+            }
+        }
+
+        // this makes the buttons on the left and right using some psuedo elements and buttons
+        .carousel-button {
+            position: relative;
+            cursor: pointer;
+            height: 50px;
+            width: 50px;
+            max-width: 50px;
+            border: none;
+            z-index: 2;
+            border-radius: 50%;
+            .carousel-arrow {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 50%;
+                height: 5px;
+                border: none;
+                border-radius: 2px;
+                z-index: 3;
+                &::before, &::after {
+                    width: 5px;
+                    height: 15px;
+                    border: none;
+                    border-radius: 2px;
+                    content: '';
+                    position: absolute;
+                    z-index: 3;
+                }
+            }
+            .carousel-arrow-left {
+                left: 50%;
+                transform: translate(-50%, -50%);
+                &::before {
+                    top: -1px;
+                    left: 0;
+                    transform: rotate(-45deg);
+                }
+                &::after {
+                    top: -9px;
+                    left: 0;
+                    transform: rotate(45deg);
+                }
+            }
+            .carousel-arrow-right {
+                right: 50%;
+                transform: translate(50%, -50%);
+                &::before {
+                    top: -1px;
+                    right: 0;
+                    transform: rotate(-135deg);
+                }
+                &::after {
+                    top: -9px;
+                    right: 0;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+// mobile alignment 
+@media only screen and (max-width: 1024px) {
+    .carousel-container {
+        padding: 1em;
+        .carousel-track-container {
+            height: 300px;
+        }
+        .carousel-button-left{
+            left: 30px;
+        }
+        .carousel-button-right{
+            right: 30px;
+        }
+        .carousel-button {
+            background-color: $bg-clr-2;
+            .carousel-arrow {
+                background-color: $bg-clr-1;
+                &::before, &::after {
+                    background-color: $bg-clr-1;
+                }
+            }
+        }
+    }
+    
+}
+// adjustment for large screen
+@media only screen and (min-width: 1024px) {
+    .carousel-button-left{
+        left: -100px;
+    }
+    .carousel-button-right{
+        right: -100px;
+    }
+    .carousel-button {
+        background-color: $bg-clr-1;
+        &:hover {
+            transform: scale(1.4);
+            transition: all .4s ease;
+        }
+        &:hover .carousel-arrow {
+            transform: translateY(0);
+            box-shadow:
+                4px 5px 10px 3px rgba(13, 32, 25, 0.966),
+                -6px 5px 14px 0px rgba(12, 12, 12, 0.966);
+            transition: all .4s ease;
+        }
+        .carousel-arrow {
+            background-color: $bg-clr-2;
+            &::before, &::after {
+                background-color: $bg-clr-2;
+            }
+        }
+    }
+    .carousel-track-container {
+        margin-top: 5em;
+        height: 600px;
+    }
+}
+

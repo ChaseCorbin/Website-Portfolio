@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Chase Corbin Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css?ver=1.0">
+    <script src="js/hamburger.js" defer></script>
+    <script src="js/stickynotes.js" defer></script>
     <style>
-
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
     </style>
 </head>
 <body>
-    
     <div class="home-container" id="home" >
     <div class="filterScreen"></div>
-   
     <div class="home-content-container" id="name">
         <h2 class="h2-tile-1">Hi, my name is</h2>
         <h1 class="first-name"><a href="#home">Chase</a></h1>
@@ -25,58 +24,55 @@
     <div class="nav-and-sticky-notes">
         <div class="nav">
             <div class="nav-bars"></div>
-
             <div class="nav-right">
-                <div class="nav-list">
+                <nav class="nav-list">
                     <ul>
                         <a href="#home">
                             <li>Home</li>
                         </a>
-                        <a href="#aboutMe">
+                        <!-- <a href="#aboutMe">
                             <li>About Me</li>
-                        </a>
-                        <a href="#myWork">
-                            <li>My Work</li>
+                        </a> -->
+                        <a href="myart.html">
+                            <li>My Art</li>
                         </a>
                         <a href="#home">
-                            <li>home</li>
+                            <li>My Resume</li>
                         </a>
                     </ul>
-                </div>
-                
+                </nav>
             </div>
         </div>
             <div class="sticky-notes" id="stickyNotes">
-                <div class="addNote"></div>
-                <p id="plus">+</p>
+                <div class="addNote" id="addNote">
+                    <textarea>Take some notes.</textarea>    
+                </div>
+                <div class="btn-wrapper">
+                    <button id="plus" onclick="stickyNotesFunction()">+</button>
+                    <button id="minus">&#10006</button>
+                </div>
             </div>
         </div>
     </div>
-        
     <div class="home-container-2" id="aboutMe">
         <div class="home-content-container-2">
             <h1 id="h1-about-me">About <br> Me.</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic suscipit eveniet reprehenderit illum accusamus eaque harum, voluptas quo temporibus eius ut non quod soluta delectus incidunt architecto distinctio quaerat earum.</p>
-            <a class="a-cv" href="#aboutMe"><h1 class="h1-cv">Check out my <br> Portfolio</h1></a>
+            <p>I have recently graduated from Southern Crescent Technical College with an associate degree in computer networking. I aspire to learn about technology and using it in many ways to express my creativity. Front-end web development has been a passion of mine for many years, I began learning code in high school. Since then, I have further refined my programming skills; you can view my GitHub as a reference to my progression.</p>
+            <!-- <a class="a-about-me" href="timeline.html"><h1 class="h1-about-me">Check out my <br> Timeline</h1></a> -->
         </div>
     </div>
     <div class="home-container" id="myWork">
         <div class="home-content-container">
             <div class="home-content-container-right">
                 <h1 class="h1-tile-3">My <br> Work</h1>
+                <p class="p-tile-3">I currently work as an IT Support Specialist for Southern Crescent Technical College, where I have also worked as a tutor for several years. I tutored various concepts of math, such as Algebra, Statistics, etc. I also tutored numerous students in proper syntax for front end Web Development. Currently, I configure, deploy, and maintain different endpoint devices for Southern Crescents’ IT infrastructure.</p>
+                <a class="a-cv" href="#aboutMe"><h1 class="h1-cv">Check out my <br> Resume</h1></a>
                 <p class="p-tile-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic suscipit eveniet reprehenderit illum accusamus eaque harum, voluptas quo temporibus eius ut non quod soluta delectus incidunt architecto distinctio quaerat earum.</p>
-
-                <a class="a-cv" href="#aboutMe"><h1 class="h1-cv">Check out my <br> CV</h1></a>
-
-                <p class="p-tile-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic suscipit eveniet reprehenderit illum accusamus eaque harum, voluptas quo temporibus eius ut non quod soluta delectus incidunt architecto distinctio quaerat earum.</p>
-                <a class="a-cv" href="#aboutMe"><h1 class="h1-cv">Check out my <br> Art</h1></a>
-
-                <p class="p-tile-3" style="margin-bottom: 4em;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic suscipit eveniet reprehenderit illum accusamus eaque harum, voluptas quo temporibus eius ut non quod soluta delectus incidunt architecto distinctio quaerat earum.</p>
+                <a class="a-cv" href="myart.html"><h1 class="h1-cv">Check out my <br> Art</h1></a>
+                <p class="p-tile-3">My creative passion for art began at a young age. I was about eight years old when I started to grow interest in the different complexities of shading with a graphite pencil. After mastering contrast with a pencil, I decided to use more color in my art. This was achieved through mixing different mediums. I had a great desire for hyper-realism until I reached high school. During my high school years at Pike County High School, I learned 2D & 3D graphic design using various software services.</p>
+                <p class="p-tile-3" style="margin-bottom: 4em;">I also expressed a strong desire for Web Development using languages such as, HTML5 and CSS3. All the My creative passion for art began at a young age. I was about eight years old when I started to grow interest in the different complexities of shading with a graphite pencil. After mastering contrast with a pencil, I decided to use more color in my art. This was achieved through mixing different mediums. I had a great desire for hyper-realism until I reached high school. During my high school years at Pike County High School, I learned 2D & 3D graphic design using various software services.</p>
             </div>
         </div>
-
     </div>
-    <script src="js/stickynotes.js"></script>
-    <script src="js/hamburger.js"></script>
 </body>
 </html>

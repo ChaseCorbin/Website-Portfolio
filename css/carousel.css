@@ -1,0 +1,199 @@
+#home {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: auto;
+}
+
+#home .nav-and-sticky-notes {
+  margin: 0 0 0 auto;
+  width: calc(100% - 350.67px - 16px);
+}
+
+#home .carousel-container {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#home .carousel-container .hideBtn {
+  display: none;
+}
+
+#home .carousel-container .carousel-track-container {
+  -webkit-box-shadow: 12px 12px 20px 0px rgba(13, 32, 25, 0.966), -20px 16px 20px 0px rgba(12, 12, 12, 0.966);
+          box-shadow: 12px 12px 20px 0px rgba(13, 32, 25, 0.966), -20px 16px 20px 0px rgba(12, 12, 12, 0.966);
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#home .carousel-container .carousel-track-container .carousel-track {
+  list-style-type: none;
+  position: relative;
+  height: 100%;
+}
+
+#home .carousel-container .carousel-track-container .carousel-track .carousel-slide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#home .carousel-container .carousel-track-container .carousel-track .carousel-slide .carousel-image {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#home .carousel-container .carousel-button {
+  position: relative;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  max-width: 50px;
+  border: none;
+  z-index: 2;
+  border-radius: 50%;
+}
+
+#home .carousel-container .carousel-button .carousel-arrow {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 50%;
+  height: 5px;
+  border: none;
+  border-radius: 2px;
+  z-index: 3;
+}
+
+#home .carousel-container .carousel-button .carousel-arrow::before, #home .carousel-container .carousel-button .carousel-arrow::after {
+  width: 5px;
+  height: 15px;
+  border: none;
+  border-radius: 2px;
+  content: '';
+  position: absolute;
+  z-index: 3;
+}
+
+#home .carousel-container .carousel-button .carousel-arrow-left {
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#home .carousel-container .carousel-button .carousel-arrow-left::before {
+  top: -1px;
+  left: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+#home .carousel-container .carousel-button .carousel-arrow-left::after {
+  top: -9px;
+  left: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#home .carousel-container .carousel-button .carousel-arrow-right {
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+}
+
+#home .carousel-container .carousel-button .carousel-arrow-right::before {
+  top: -1px;
+  right: 0;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+#home .carousel-container .carousel-button .carousel-arrow-right::after {
+  top: -9px;
+  right: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+@media only screen and (max-width: 1024px) {
+  .carousel-container {
+    padding: 1em;
+  }
+  .carousel-container .carousel-track-container {
+    height: 300px;
+  }
+  .carousel-container .carousel-button-left {
+    left: 30px;
+  }
+  .carousel-container .carousel-button-right {
+    right: 30px;
+  }
+  .carousel-container .carousel-button {
+    background-color: #dfe6c7;
+  }
+  .carousel-container .carousel-button .carousel-arrow {
+    background-color: #14291f;
+  }
+  .carousel-container .carousel-button .carousel-arrow::before, .carousel-container .carousel-button .carousel-arrow::after {
+    background-color: #14291f;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .carousel-button-left {
+    left: -100px;
+  }
+  .carousel-button-right {
+    right: -100px;
+  }
+  .carousel-button {
+    background-color: #14291f;
+  }
+  .carousel-button:hover {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+  }
+  .carousel-button:hover .carousel-arrow {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-box-shadow: 4px 5px 10px 3px rgba(13, 32, 25, 0.966), -6px 5px 14px 0px rgba(12, 12, 12, 0.966);
+            box-shadow: 4px 5px 10px 3px rgba(13, 32, 25, 0.966), -6px 5px 14px 0px rgba(12, 12, 12, 0.966);
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+  }
+  .carousel-button .carousel-arrow {
+    background-color: #dfe6c7;
+  }
+  .carousel-button .carousel-arrow::before, .carousel-button .carousel-arrow::after {
+    background-color: #dfe6c7;
+  }
+  .carousel-track-container {
+    margin-top: 5em;
+    height: 600px;
+  }
+}
+/*# sourceMappingURL=carousel.css.map */

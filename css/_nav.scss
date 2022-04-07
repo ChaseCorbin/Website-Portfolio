@@ -1,6 +1,12 @@
 @import "./variables";
 
 body {
+    // turned selection off entire site.
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     overflow-x: hidden;
 }
 
@@ -19,8 +25,11 @@ body {
 
 }
 
+
+// everything smaller then the laptop size 
 @media only screen and (max-width: 1024px) {
     .nav {
+        z-index: 99;
         position: fixed;
         right: 1em;
         bottom: 1em;
@@ -33,6 +42,8 @@ body {
         align-items: center;
         cursor: pointer;
         .nav-bars {
+            
+            position: relative;
             border-radius: 10px;
             border: 1px solid $bg-clr-1;
             width: 45px;
@@ -42,6 +53,7 @@ body {
             // top and bottom lines in hamburger menu
             &::before, &::after {
                 content: '';
+                
                 transition: all .5s ease-in-out;
                 border: 1px solid $bg-clr-1;
                 position: absolute;
@@ -74,7 +86,7 @@ body {
     // opens text links when menu .open applies 
     .nav.open ul a li {
         display: block;
-        position: absolute;
+        
         left: -200px;
         bottom: 400px;
         color: $bg-clr-2;
@@ -112,7 +124,7 @@ body {
         position: fixed;
         background: transparent;
         display: none;
-        left: -1em;
+        z-index: 3;
     }
     .filterOn {
         animation: screenFilter .4s linear forwards;
@@ -123,4 +135,26 @@ body {
     #myWork {
         height: 190vh;
     }
+    @media only screen and (max-height: 650px) {
+        nav li {
+            position: auto;
+        }
+        nav ul {
+            display: flex;
+            flex-direction: row;
+            width: 500px;
+            position: absolute;
+            left: -40vw;
+            transform: translateX(-50%);
+            top: 0;
+            justify-content: space-around;
+        }
+    }
+    @media only screen and (min-height: 650px) {
+        nav li {
+            position: absolute;
+        }
+    }
 }
+
+// if the user has a phone and has it horiztontal the nav list items need to flex row
