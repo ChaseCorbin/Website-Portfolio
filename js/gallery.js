@@ -6,6 +6,41 @@ const prevBtn = document.querySelector('.carousel-button-left');
 const slideSize = slide[0].getBoundingClientRect();
 const slideWidth = slideSize.width;
 
+// lightbox start
+const images = document.querySelectorAll('.carousel-image');
+const lightBox = document.createElement('div');  
+const bigImage = document.createElement('img');
+const closeBtn = document.createElement('div');
+
+
+
+// click to open large photo
+images.forEach(image => {
+    image.addEventListener('click', e => {
+        // changing image source to be the same for the created div
+        bigImage.src = image.src
+        // assigning it an ID
+        lightBox.id = 'lightBox'
+        closeBtn.id = 'closeBtn'
+        // making active a class for styling
+        lightBox.classList.add('active')
+        document.body.appendChild(lightBox)
+        lightBox.appendChild(closeBtn)
+        lightBox.appendChild(bigImage) 
+    })
+})
+
+closeBtn.addEventListener('click', e => {
+    lightBox.remove(closeBtn)
+    lightBox.remove(closeBtn)
+})
+// lightbox end
+
+
+
+
+
+
 // set slide positions next to each other for the transition
 const setSlidePosition = (slide, index) => {
     slide.style.left = slideWidth * index + 'px'; 
@@ -56,6 +91,7 @@ nextBtn.addEventListener('click', e => {
     changeSlide(track, currentSlide, nextSlide);
     addRemoveBtn(slide, nextBtn, prevBtn, nextIndex);
 })
+
 
 
 

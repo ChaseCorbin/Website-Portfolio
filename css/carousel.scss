@@ -1,6 +1,40 @@
 
 
 @import "./variables";
+#lightBox {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    img {
+        max-width: 80vw;
+        max-height: 60vh;
+        border-radius: 20px;
+    }
+    #closeBtn {
+        &::before {
+            content: 'X';
+            position: absolute;
+            top: 3em;
+            right: 2em;
+            width: 50px;
+            height: 50px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+}
+#lightBox.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #home {
     flex-direction: column;
@@ -137,7 +171,6 @@
             }
         }
     }
-    
 }
 // adjustment for large screen
 @media only screen and (min-width: 1024px) {
@@ -215,6 +248,7 @@
                 transition: opacity .6s ease;
                 opacity: 0;
             }
+            
             // header and description need a background to make text more readable. thats what this is for.
             &::before {
                 content: '';
@@ -233,6 +267,7 @@
                 opacity: 1;
                 transition: all .2s ease;
             }
+            
         }
         
     }
