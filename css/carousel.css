@@ -211,13 +211,21 @@
         -ms-flex-pack: center;
             justify-content: center;
     margin: auto;
-    width: 50%;
-    gap: 1em;
+    width: 90%;
+    gap: .5em;
     opacity: 1;
   }
   .carousel-track-container .carousel-slide h1, .carousel-track-container .carousel-slide p {
     color: #dfe6c7;
-    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 5px 4px 5px rgba(13, 32, 25, 0.788);
+  }
+  .carousel-track-container .carousel-slide h1 {
+    font-size: 2rem;
+    font-family: 'Mate SC', serif;
+  }
+  .carousel-track-container .carousel-slide p {
+    font-size: 1.25rem;
+    font-family: 'Raleway', sans-serif;
   }
   .carousel-track-container .carousel-slide .carousel-text {
     display: -webkit-box;
@@ -239,7 +247,7 @@
     opacity: 0;
   }
   .carousel-track-container .carousel-slide:hover::before {
-    height: 200px;
+    height: 220px;
     bottom: 0;
     padding: 1em;
     border-top: 1px solid white;

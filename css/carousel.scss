@@ -181,8 +181,8 @@
                 align-content: center;
                 justify-content: center;
                 margin: auto;
-                width: 50%;
-                gap: 1em;
+                width: 90%;
+                gap: .5em;
                 opacity: 1;
             }
             // &:hover h1, &:hover p {
@@ -198,19 +198,22 @@
             // }
             h1, p {
                 color: $bg-clr-2;
-                // position: absolute;
-                font-family: Arial, Helvetica, sans-serif;
-             
-                
+                text-shadow: 5px 4px 5px rgba(13, 32, 25, 0.788);
+            }
+            h1 {
+                font-size: 2rem;
+                font-family: 'Mate SC', serif;
+            }
+            p {
+                font-size: 1.25rem;
+                font-family: 'Raleway', sans-serif;
             }
             // aligning the text header and description 
             .carousel-text {
                 display: flex;
                 height: 100px;
                 transition: opacity .6s ease;
-                 
                 opacity: 0;
-                
             }
             // header and description need a background to make text more readable. thats what this is for.
             &::before {
@@ -223,7 +226,7 @@
                 opacity: 0;
             }
             &:hover::before {
-                height: 200px;
+                height: 220px;
                 bottom: 0;
                 padding: 1em;
                 border-top: 1px solid white;
