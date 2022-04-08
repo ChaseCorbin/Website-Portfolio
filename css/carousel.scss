@@ -174,7 +174,7 @@
             // make a header and description appear with hovering
             &:hover .carousel-text {
                 position: absolute;
-                top: 80%;
+                top: 70%;
                 left: 50%;
                 transform: translateX(-50%);
                 flex-direction: column;
@@ -182,6 +182,8 @@
                 justify-content: center;
                 margin: auto;
                 width: 50%;
+                gap: 1em;
+                opacity: 1;
             }
             // &:hover h1, &:hover p {
             //     top: 80%;
@@ -195,15 +197,20 @@
             //     cursor: pointer;
             // }
             h1, p {
-                color: white;
+                color: $bg-clr-2;
                 // position: absolute;
                 font-family: Arial, Helvetica, sans-serif;
+             
                 
             }
             // aligning the text header and description 
             .carousel-text {
                 display: flex;
                 height: 100px;
+                transition: opacity .6s ease;
+                 
+                opacity: 0;
+                
             }
             // header and description need a background to make text more readable. thats what this is for.
             &::before {
@@ -212,13 +219,16 @@
                 width: 100%;
                 height: 0;
                 background-image: radial-gradient(ellipse at 10% 20%, #16613eb0, #14291f);
-                
+                box-shadow: -1px -6px 20px 0px rgba(13, 32, 25, 0.348);
+                opacity: 0;
             }
             &:hover::before {
-                height: 100px;
+                height: 200px;
                 bottom: 0;
                 padding: 1em;
                 border-top: 1px solid white;
+                opacity: 1;
+                transition: all .2s ease;
             }
         }
         
