@@ -19,13 +19,15 @@
   position: absolute;
   top: 3em;
   right: 2em;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Fredoka', sans-serif;
   font-size: 2rem;
   text-align: center;
   cursor: pointer;
+  border: 2px solid white;
+  border-radius: 10px;
 }
 
 #lightBox.active {
@@ -204,6 +206,14 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  #lightBox #closeBtn:hover::before {
+    color: #8e8e8e;
+    border: 2px solid #8e8e8e;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+  }
   .carousel-button-left {
     left: -100px;
   }
